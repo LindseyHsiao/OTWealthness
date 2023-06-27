@@ -5,6 +5,7 @@ import Home from './pages/Home';
 // import Contact from './pages/Contact';
 import Events from './pages/Events';
 import About from './pages/About';
+import Blog from './pages/Blog';
 // import Lessons from './pages/Lessons';
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
         <Route path="/" element={<Home />} />
         {/* <Route path="/Contact" element={<Contact />} /> */}
         <Route path="/Events" element={<Events />} />
-        {/* <Route path="/Lessons" element={<Lessons />} /> */}
+        <Route path="/Blog/:id" element={<Blog />} />
         <Route path="/About" element={<About />} />
       </Routes>
       {/* <Footer /> */}

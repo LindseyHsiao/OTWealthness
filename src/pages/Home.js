@@ -1,8 +1,10 @@
 // import video from '../assets/images/Odaly Yoga_1.mp4'
 import odalyLogo from '../assets/images/OdalyLogo.png'
+import {blogData} from '../assets/misc/blog.js'
 
 
 export default function Home() {
+    console.log(blogData)
     return (
         <>
             {/* <video src={video} autoPlay loop muted></video> */}
@@ -28,7 +30,27 @@ export default function Home() {
                     <section class="mb-32 text-center md:text-left ">
                         <h2 class="mb-12 text-center text-3xl font-bold">Blog</h2>
 
-                        <div class="mb-12 grid items-center gap-x-6 md:grid-cols-2 xl:gap-x-12">
+                        {blogData.map((item, i)=> (
+                            <div class="mb-12 grid items-center gap-x-6 md:grid-cols-2 xl:gap-x-12" key={i}>
+                            <div class="mb-6 md:mb-0">
+                                {/* <div class="relative mb-6 overflow-hidden rounded-lg bg-cover bg-no-repeat shadow-lg dark:shadow-black/20"
+                                    data-te-ripple-init data-te-ripple-color="light"> */}
+                                    {/* <img src={odalyLogo} class="w-full" alt="Louvre" /> */}
+                                    <a href={`/Blog/${item.id}`}>
+                                        <div
+                                            // class="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100 bg-[hsla(0,0%,98.4%,.15)]"
+                                            >
+                                                {item.title}
+                                        </div>
+                                    </a>
+                                {/* </div> */}
+                            </div>
+
+                           
+                        </div>
+                        ))}
+
+                        {/* <div class="mb-12 grid items-center gap-x-6 md:grid-cols-2 xl:gap-x-12">
                             <div class="mb-6 md:mb-0">
                                 <div class="relative mb-6 overflow-hidden rounded-lg bg-cover bg-no-repeat shadow-lg dark:shadow-black/20"
                                     data-te-ripple-init data-te-ripple-color="light">
@@ -114,7 +136,7 @@ export default function Home() {
                                     volutpat feugiat. Donec.
                                 </p>
                             </div>
-                        </div>
+                        </div> */}
                     </section>
                     {/* <!-- Section: Design Block --> */}
                 </div>
