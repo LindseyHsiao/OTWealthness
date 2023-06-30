@@ -6,7 +6,7 @@ import Home from './pages/Home';
 import Events from './pages/Events';
 import About from './pages/About';
 import Blog from './pages/Blog';
-// import Lessons from './pages/Lessons';
+import BlogForm from './pages/BlogForm';
 
 function App() {
   return (
@@ -18,6 +18,7 @@ function App() {
         <Route path="/Events" element={<Events />} />
         <Route path="/Blog/:id" element={<Blog />} />
         <Route path="/About" element={<About />} />
+        <Route path="/BlogForm" element={<BlogForm />} />
       </Routes>
       {/* <Footer /> */}
     </BrowserRouter>

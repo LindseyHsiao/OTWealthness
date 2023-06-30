@@ -1,10 +1,20 @@
 // import video from '../assets/images/Odaly Yoga_1.mp4'
+import { useEffect, useState } from 'react';
 import odalyLogo from '../assets/images/OdalyLogo.png'
 import { blogData } from '../assets/misc/blog.js'
 
 
 export default function Home() {
+    const [reversedData, setReversedData] =  useState([])
     console.log(blogData)
+
+    useEffect(()=>{
+
+        // display the most recent 3 blog posts. 
+            const reversedDataSet = blogData.toReversed().slice(0,3);
+            setReversedData(reversedDataSet)
+    }, [reversedData])
+
     return (
         <>
             {/* <video src={video} autoPlay loop muted></video> */}
@@ -14,13 +24,13 @@ export default function Home() {
                 <button className='border rounded pt-2 pb-2 pr-4 pl-4 text-neutral-50 hover:text-amber-700 hover:bg-neutral-50'>Start Now</button>
             </section>
 
-            <section className='flex p-10 bg-neutral-50'>
-                <div className='flex flex-col'>
+            <section className='flex p-10 bg-neutral-50 colums-2'>
+                <div className='flex flex-col w-full'>
                     <h1 className='mb-12 text-center text-3xl font-bold'>About OT</h1>
                     <p>Creator & founder of OT WEALTHNESS, wealth is the meaning of Odaly's name "riqueza". Odaly Tineo is a Latina yoga instructor and a self-transformational wellness mentor. She believes inner wealth is creating your own life’s path through authentic connection to, Self. A holistic and intuitive wellness coaching approach that centers around one's innermost explorations. The Inner-Wealth journey was inspired by Odaly's own path of self-discovery and spirituality. The philosophy of Yoga empowers Odaly's body acceptance and connection to her intuitive nature. She applies writing and journaling as a therapeutic mindful practice to regulate mindset and emotions. She is a spiritual light-worker of communities and feminine circles. Odaly holds a Yoga Alliance teacher certification and has been practicing yoga for over a decade. Teaching different types of yoga practices, including energy work, breath work, and meditation techniques in English, y Español. She is first-generation to earn a B.A. in Sociology and M.A.S..  Odaly is a leader of workshops and retreats, hosts supportive community groups for women and is the Co-creator of BRAVA, a community for feminine healing and connection.</p>
                 </div>
-                <div>
-                    <img className='' src={odalyLogo} alt="" />
+                <div className='w-full'>
+                    <img  src={odalyLogo} alt=""  />
                 </div>
             </section>
 
@@ -30,12 +40,12 @@ export default function Home() {
                     <section class="mb-32 text-center md:text-left ">
                         <h2 class="mb-12 text-center text-3xl font-bold">Blog</h2>
 
-                        {blogData.map((item, i)=> (
+                        {reversedData.map((item, i)=> (
                             <div class="mb-12 grid items-center gap-x-6 md:grid-cols-2 xl:gap-x-12" key={i}>
                             <div class="mb-6 md:mb-0">
                                 <div class="relative mb-6 overflow-hidden rounded-lg bg-cover bg-no-repeat shadow-lg dark:shadow-black/20"
                                     data-te-ripple-init data-te-ripple-color="light">
-                                    <img src={odalyLogo} class="w-full" alt="Louvre" /> 
+                                    <img src={item.img} class="w-full" alt="Louvre" /> 
                                     <a href={`/Blog/${item.id}`}>
                                         <div
                                             // class="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100 bg-[hsla(0,0%,98.4%,.15)]"
