@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Header from './components/Header';
 import Home from './pages/Home';
 // import Contact from './pages/Contact';
-import Events from './pages/Events';
+import Services from './pages/Services';
 import About from './pages/About';
 import Blog from './pages/Blog';
 import BlogForm from './pages/BlogForm';
@@ -15,7 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         {/* <Route path="/Contact" element={<Contact />} /> */}
-        <Route path="/Events" element={<Events />} />
+        <Route path="/Services" element={<Services />} />
         <Route path="/Blog/:id" element={<Blog />} />
         <Route path="/About" element={<About />} />
         <Route path="/BlogForm" element={<BlogForm />} />

@@ -1,6 +1,6 @@
 import odalyLogo from '../assets/images/OdalyLogo.png'
 
-export default function Events() {
+export default function Services() {
     return (
         <>
         <section>
