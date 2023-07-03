@@ -30,7 +30,7 @@ const [toggle, setToggle] = useState(false)
                         <div className="mx-2 group-hover:border-b group-hover:border-amber-700"></div>
                     </div>
                     <div className="group">
-                        <a href="/Blog">Blog</a>
+                        <a href="/AllBlogs">Blog</a>
                         <div className="mx-2 group-hover:border-b group-hover:border-amber-700"></div>
                     </div>
                 </div>
@@ -47,7 +47,7 @@ const [toggle, setToggle] = useState(false)
             <div id="menu" className={toggle ? "absolute top-0 bottom-0 left-0 flex flex-col self-end w-full min-h-screen py-1 pt-40 pl-12 space-y-3 text-lg text-neutral-50 uppercase bg-amber-700" : "absolute top-0 bottom-0 left-0 hidden flex-col self-end w-full min-h-screen py-1 pt-40 pl-12 space-y-3 text-lg text-white uppercase bg-neutral-50"}>
                 <a href="/Services" className="hover:text-pink-500">Services</a>
                 <a href="/Contact" className="hover:text-pink-500">Contact</a>
-                <a href="/Blog" className="hover:text-pink-500">Blog</a>
+                <a href="/AllBlogs" className="hover:text-pink-500">Blog</a>
                 <a href="/About" className="hover:text-pink-500">About</a>
             </div>
 
