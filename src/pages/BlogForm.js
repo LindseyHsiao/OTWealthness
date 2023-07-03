@@ -2,10 +2,10 @@ import React from 'react'
 
 export default function BlogForm() {
     return (
-        <div className="bg-orange-50" flex flex-col items-center>
-            <h1>Blog Entry Form</h1>
+        <div className="bg-neutral-50">
+            <h1 className="text-xl pl-10" >Blog Entry Form</h1>
             <form action="">
-                <div className='flex flex-col items-center'>
+                <div className='grid grid-cols-2 gap-4 p-10'>
                     <label htmlFor="title">Title</label>
                     <input type="text" id='title' />
                     <label htmlFor="content" id='content'>Content</label>
@@ -16,7 +16,7 @@ export default function BlogForm() {
                     <input type="url" id='imageURL'/>
                     <label htmlFor="author">Author</label>
                     <input type="text" id='author' />
-                    <button className='bg-white' type='submit'>Submit</button>
+                    <button className='bg-white col-span-2 hover:bg-black hover:text-neutral-50' type='submit'>Submit</button>
                 </div>
             </form>
 
