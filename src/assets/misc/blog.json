@@ -1,0 +1,12 @@
+ [
+
+    {
+        "id": 2,
+        "title": "blog post Two", 
+        "content": "",
+        "createdDate": "6/26/2023",
+        "img": "https://daily.jstor.org/wp-content/uploads/2020/06/why_you_should_learn_the_names_of_trees_1050x700.jpg",
+        "author": "Lindsey"
+    }
+
+]

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
-import { blogData } from '../assets/misc/blog.js'
+import  blogData  from '../assets/misc/blog.json'
 
 export default function AllBlogs() {
 

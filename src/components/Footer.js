@@ -26,19 +26,19 @@ export default function Footer(){
                     <div className="flex items-center justify-center mx-auto space-x-4 md:justify-end md:mx-0">
                         {/* <!-- icon 1 --> */}
                         <div className="h-8 group">
-                            <a href="#">
+                            <a href="https://www.instagram.com/ot.wealthness/">
                                 <img src={facebookIcon} alt="Facebook Icon" className="duration-200 ficon h-6"/>
                             </a>
                         </div>
                         {/* <!-- icon 2 --> */}
                         <div className="h-8 group">
-                            <a href="#">
+                            <a href="https://www.instagram.com/ot.wealthness/">
                                 <img src={instagramIcon} alt="Instagram Icon" className="h-6"/>
                             </a>
                         </div>
                         {/* <!-- icon 3 --> */}
                         <div className="h-8 group">
-                            <a href="#">
+                            <a href="https://www.instagram.com/ot.wealthness/">
                                 <img src={pinterestIcon} alt="Pinterest Icon" className="h-6"/>
                             </a>
                         </div>

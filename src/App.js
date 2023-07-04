@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-// import Footer from './components/Footer';
+import Footer from './components/Footer';
 import Header from './components/Header';
 import Home from './pages/Home';
 // import Contact from './pages/Contact';
@@ -22,7 +22,7 @@ function App() {
         <Route path="/About" element={<About />} />
         <Route path="/BlogForm" element={<BlogForm />} />
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </BrowserRouter>
   );
 }

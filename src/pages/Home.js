@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import odalyLogo from '../assets/images/OdalyLogo.png'
-import { blogData } from '../assets/misc/blog.js'
+import  blogData  from '../assets/misc/blog.json'
 
 
 export default function Home() {
