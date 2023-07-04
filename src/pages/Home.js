@@ -1,4 +1,3 @@
-// import video from '../assets/images/Odaly Yoga_1.mp4'
 import { useEffect, useState } from 'react';
 import odalyLogo from '../assets/images/OdalyLogo.png'
 import { blogData } from '../assets/misc/blog.js'
