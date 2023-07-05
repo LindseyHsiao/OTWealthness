@@ -32,6 +32,8 @@ export default function BlogForm() {
             img: '',
             author: ''
         })
+
+        
     }
     return (
         <div className="bg-neutral-50">
