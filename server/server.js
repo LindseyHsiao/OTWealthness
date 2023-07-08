@@ -11,4 +11,7 @@ if(process.env.NODE_ENV === 'production'){
 
 app.use(routes)
 
-app.listen(PORT, ()=>console.log('server running on port 3001'))
+// express.js middelware to instruct server to make certain files readily available and to not gate it behind an endpoint
+app.use(express.static('public'));
+
+app.listen(PORT, () => console.log('server running on port 3001'))
