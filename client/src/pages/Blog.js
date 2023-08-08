@@ -1,12 +1,32 @@
 import { useParams } from 'react-router-dom'
 // import blogData  from '../assets/misc/blog.json'
+import { getOneBlog } from '../utils/API'
+import { useEffect, useState } from 'react'
 
 export default function Blog() {
+    const [oneBlog, setOneBlog] = useState([])
 
-    const { id } = useParams()
+    const {id} = useParams()
+    
+ useEffect(()=> {
 
-    // const filteredBlog = blogData.filter((blog) => blog.id === parseInt(id));
-    // console.log(filteredBlog)
+     const getData = async () => {
+         try {
+             const response = await getOneBlog(id) ;
+             const blogData = await response.json();
+             
+             console.log(blogData);
+             setOneBlog(blogData)
+         } catch (err) {
+             console.log(err)
+         }
+         
+     }
+     getData()
+ }, [id])
+   
+
+    
 
 
 
@@ -20,7 +40,7 @@ export default function Blog() {
                         <div class="mb-6 lg:mb-0">
                             <div class="relative mb-6 overflow-hidden rounded-lg bg-cover bg-no-repeat shadow-lg dark:shadow-black/20"
                                 data-te-ripple-init data-te-ripple-color="light">
-                                {/* <img src={filteredBlog[0].img} class="w-full" alt="Louvre" /> */}
+                                <img src={oneBlog[0].img} class="w-full" alt="Louvre" />
                                 
                             </div>
 
@@ -31,7 +51,7 @@ export default function Blog() {
                                     <a href="#!">{filteredBlog[0].author}</a></small> */}
                             </p>
                             <p class="text-neutral-500 dark:text-neutral-300 text-left">
-                            {/* {filteredBlog[0].content} */}
+                            {/* {oneBlog[0].content} */}
                             </p>
                         </div>
                     

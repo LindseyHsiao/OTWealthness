@@ -1,12 +1,12 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 // import  blogData  from '../assets/misc/blog.json'
 import {v4 as uuid} from 'uuid'
+import { createBlog } from '../utils/API'
 
 export default function BlogForm() {
 
 
     const [blogPost, setBlogPost]= useState({
-        id: uuid(),
         title: '',
         content: '',
         createdDate: '',
@@ -19,19 +19,26 @@ export default function BlogForm() {
         setBlogPost({...blogPost, [name]: value})
     }
 
-    const handleSubmit =  (e)=> {
+    const handleSubmit =  async (e)=> {
         e.preventDefault()
-     
+     try{
+        const response =  await createBlog(blogPost)
+        
+        if(!response.ok){
+            throw new Error('couldnt create blog')
+        }
 
-        console.log(blogPost)
-        setBlogPost({
-            id: uuid(),
-            title: '',
-            content: '',
-            createdDate: '',
-            img: '',
-            author: ''
-        })
+         setBlogPost({
+             title: '',
+             content: '',
+             createdDate: '',
+             img: '',
+             author: ''
+         })
+     }catch(err){
+        console.log(err);
+     }
+
 
         
     }
