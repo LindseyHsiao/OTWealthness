@@ -1,7 +1,7 @@
 const router =  require('express').Router()
-const { getBlogs, addBlog, getOneBlog, deleteOneBlog } =  require('../controllers/blogController')
+const { getBlogs, addBlog, getOneBlog, deleteOneBlog, updateOneBlog } =  require('../controllers/blogController')
 
 router.route('/blogs').get(getBlogs).post(addBlog)
-router.route('/blogs/:id').get(getOneBlog).delete(deleteOneBlog)
+router.route('/blogs/:id').get(getOneBlog).delete(deleteOneBlog).findOneAndUpdate(updateOneBlog)
 
 module.exports = router

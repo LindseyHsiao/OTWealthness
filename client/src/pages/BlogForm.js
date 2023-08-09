@@ -1,6 +1,4 @@
 import React, { useState } from 'react'
-// import  blogData  from '../assets/misc/blog.json'
-import {v4 as uuid} from 'uuid'
 import { createBlog } from '../utils/API'
 
 export default function BlogForm() {

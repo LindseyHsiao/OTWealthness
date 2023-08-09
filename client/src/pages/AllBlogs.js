@@ -19,7 +19,7 @@ export default function AllBlogs() {
         
 
             <section class="bg-neutral-50 p-10 mb-32 text-center">
-                <h2 class="mb-12 text-center text-3xl font-bold">Weathness Blog</h2>
+                <h2 class="mb-12 text-center text-3xl font-bold">Wealthness Blog</h2>
 
                 <div class="grid gap-6 lg:grid-cols-3 xl:gap-x-12">
                     {/* {reversedData.map((item, i) => (

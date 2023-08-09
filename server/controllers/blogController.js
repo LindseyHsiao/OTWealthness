@@ -1,20 +1,22 @@
 const { Blog } = require('../models')
 
+
 module.exports = {
     async getBlogs(req, res) {
         try {
-            const blogData =  await Blog.find()
+            const blogData = await Blog.find()
             res.json(blogData)
         } catch (err) {
             res.json(err)
         }
     },
+
     async addBlog(req, res) {
         try {
             console.log(req.body);
-           const newBlog =  await Blog.create(req.body)
-           res.json('blog has been created');
-           console.log('blog created');
+            const newBlog = await Blog.create(req.body)
+            res.json('blog has been created');
+            console.log('blog created');
         } catch (err) {
             res.status(500).json(err)
         }
@@ -32,7 +34,22 @@ module.exports = {
     },
     async deleteOneBlog(req, res) {
         try {
-            const oneBlog = await Blog.findOneAndDelete({ _id: req.params.id })
+            const oneBlog = await Blog.findOneAndDelete(
+                { _id: req.params.id }
+            )
+            res.json(oneBlog)
+        } catch (err) {
+            console.log(err);
+            res.status(500).json(err)
+        }
+    },
+    async updateOneBlog(req, res) {
+        try {
+            const oneBlog = await Blog.findOneAndUpdate(
+                { _id: req.params.id },
+                { $set: req.body },
+                { new: true }
+            )
             res.json(oneBlog)
         } catch (err) {
             console.log(err);
