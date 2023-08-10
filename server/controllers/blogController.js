@@ -15,8 +15,7 @@ module.exports = {
         try {
             console.log(req.body);
             const newBlog = await Blog.create(req.body)
-            res.json('blog has been created');
-            console.log('blog created');
+            res.json(newBlog);
         } catch (err) {
             res.status(500).json(err)
         }
@@ -35,9 +34,10 @@ module.exports = {
     async deleteOneBlog(req, res) {
         try {
             const oneBlog = await Blog.findOneAndDelete(
-                { _id: req.params.id }
+                { _id: req.params.id },
+                {new: true}
             )
-            res.json(oneBlog)
+            res.json({ message: 'Blog Deleted' })
         } catch (err) {
             console.log(err);
             res.status(500).json(err)
