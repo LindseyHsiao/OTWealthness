@@ -8,6 +8,8 @@ import About from './pages/About';
 import Blog from './pages/Blog';
 import BlogForm from './pages/BlogForm';
 import AllBlogs from './pages/AllBlogs';
+import LogIn from './pages/LogIn';
+import './App.css'
 
 function App() {
   return (
@@ -21,6 +23,7 @@ function App() {
         <Route path="/AllBlogs" element={<AllBlogs />} />
         <Route path="/About" element={<About />} />
         <Route path="/BlogForm" element={<BlogForm />} />
+        <Route path="/LogIn" element={<LogIn />} />
       </Routes>
       <Footer />
     </BrowserRouter>

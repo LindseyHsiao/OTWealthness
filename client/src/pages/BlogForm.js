@@ -3,7 +3,7 @@ import { createBlog } from '../utils/API'
 
 export default function BlogForm() {
 
-
+// use state to store an object, properties will default to empty strings for the given value
     const [blogPost, setBlogPost]= useState({
         title: '',
         content: '',
@@ -11,7 +11,7 @@ export default function BlogForm() {
         img: '',
         author: ''
     })
-
+//on change 
     const handleChange = (e) => {
         const {name, value}= e.target
         setBlogPost({...blogPost, [name]: value})
@@ -36,10 +36,9 @@ export default function BlogForm() {
      }catch(err){
         console.log(err);
      }
-
-
-        
+     
     }
+
     return (
         <div className="bg-neutral-50">
             <h1 className="text-xl pl-10" >Blog Entry Form</h1>

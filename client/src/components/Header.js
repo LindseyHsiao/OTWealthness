@@ -6,7 +6,7 @@ export default function Header() {
 const [toggle, setToggle] = useState(false)
 
     return (
-        <section className="bg-neutral-50">
+        <header className="bg-neutral-50">
         {/* <!-- Hero --> */}
         <div className="max-w-6xl mx-auto px-6 py-6">
             {/* <!-- Menu/Logo Container --> */}
@@ -53,6 +53,6 @@ const [toggle, setToggle] = useState(false)
 
             
         </div>
-    </section>
+    </header>
     )
 }
