@@ -9,6 +9,7 @@ import Blog from './pages/Blog';
 import BlogForm from './pages/BlogForm';
 import AllBlogs from './pages/AllBlogs';
 import LogIn from './pages/LogIn';
+import Table from './pages/Table';
 import './App.css'
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <Route path="/About" element={<About />} />
         <Route path="/BlogForm" element={<BlogForm />} />
         <Route path="/LogIn" element={<LogIn />} />
+        <Route path="/Table" element={<Table />} />
       </Routes>
       <Footer />
     </BrowserRouter>
