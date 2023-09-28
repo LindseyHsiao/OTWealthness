@@ -40,7 +40,7 @@ export default function Blog() {
                         <div class="mb-6 lg:mb-0">
                             <div class="relative mb-6 overflow-hidden rounded-lg bg-cover bg-no-repeat shadow-lg dark:shadow-black/20"
                                 data-te-ripple-init data-te-ripple-color="light">
-                                <img src={oneBlog[0].img} class="w-full" alt="Louvre" />
+                                <img src={oneBlog.img} class="w-full" alt="Louvre" />
                                 
                             </div>
 

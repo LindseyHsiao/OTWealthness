@@ -66,7 +66,7 @@ export default function Home() {
                                         <div class="relative mb-6 overflow-hidden rounded-lg bg-cover bg-no-repeat shadow-lg dark:shadow-black/20"
                                             data-te-ripple-init data-te-ripple-color="light">
                                             <img src={item.img} class="w-full" alt="Louvre" />
-                                            <a href={`/Blog/${item.id}`}>
+                                            <a href={`/Blog/${item._id}`}>
                                                 <div
                                                     class="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100 bg-[hsla(0,0%,98.4%,.15)]">
                                                 </div>

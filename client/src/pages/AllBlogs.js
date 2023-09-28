@@ -1,18 +1,32 @@
-import React from 'react'
-// import { useEffect, useState } from 'react';
-// import  blogData  from '../assets/misc/blog.json'
+
+import { useEffect, useState } from 'react';
+import { getAllBlogs } from '../utils/API'
+
 
 export default function AllBlogs() {
 
-    // const [reversedData, setReversedData] = useState([])
-    // console.log(blogData)
+    const [reversedData, setReversedData] = useState([])
 
-    // useEffect(() => {
 
-    //     // display the most recent 3 blog posts. 
-    //     const reversedDataSet = blogData.toReversed();
-    //     setReversedData(reversedDataSet)
-    // }, [reversedData])
+    useEffect(() => {
+        const getData = async () => {
+            try {
+                const response = await getAllBlogs();
+                const blogData = await response.json();
+                              
+
+                // display the most recent 3 blog posts. 
+                const reversedDataSet = blogData.toReversed();
+    
+                setReversedData(reversedDataSet)
+            } catch (err) {
+                console.log(err)
+            }
+
+        }
+        getData()
+    }, [reversedData])
+    
     return (
 
         // <section class="bg-neutral-50 p-10 mb-32 text-center">
@@ -56,48 +70,23 @@ export default function AllBlogs() {
         //     <div className="post"></div>
         // </section>
         <section>
-            <div className="post">
+            {reversedData.map((item, i) => (
+            <div className="post" key={i}>
                 <div className="image">
-                    <img src="https://e5p3y2s2.stackpathcdn.com/wp-content/uploads/2023/08/52881771265_d11a237cb4_c-600x400.jpg"
+                    <img src={item.img}
                         alt="" />
                 </div>
                 <div className="texts">
-                    <h2>Let’s Talk About Tree Care</h2>
+                <a href={`/Blog/${item._id}`}><h2>{item.title}</h2></a>
                     <p className="info">
-                        <a className='author'>Dawid Paszko</a>
-                        <time>2023-01-06 16:45</time>
+                        <h3 className='author'>{item.author}</h3>
+                        <time>{item.createdAt}</time>
                     </p>
-                    <p className="summary">How does Friends of Trees set trees up for a long, impactful life?</p>
+                    <p className="summary">{item.summary}</p>
                 </div>
             </div>
-            <div className="post">
-                <div className="image">
-                    <img src="https://e5p3y2s2.stackpathcdn.com/wp-content/uploads/2023/08/52881771265_d11a237cb4_c-600x400.jpg"
-                        alt="" />
-                </div>
-                <div className="texts">
-                    <h2>Let’s Talk About Tree Care</h2>
-                    <p className="info">
-                        <a className='author'>Dawid Paszko</a>
-                        <time>2023-01-06 16:45</time>
-                    </p>
-                    <p className="summary">How does Friends of Trees set trees up for a long, impactful life?</p>
-                </div>
-            </div>
-            <div className="post">
-                <div className="image">
-                    <img src="https://e5p3y2s2.stackpathcdn.com/wp-content/uploads/2023/08/52881771265_d11a237cb4_c-600x400.jpg"
-                        alt="" />
-                </div>
-                <div className="texts">
-                    <h2>Let’s Talk About Tree Care</h2>
-                    <p className="info">
-                        <a className='author'>Dawid Paszko</a>
-                        <time>2023-01-06 16:45</time>
-                    </p>
-                    <p className="summary">How does Friends of Trees set trees up for a long, impactful life?</p>
-                </div>
-            </div>
+            
+            ))}
         </section>
 
 

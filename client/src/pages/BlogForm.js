@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { createBlog } from '../utils/API'
+import { Navigate } from 'react-router-dom'
 import ReactQuill from 'react-quill'
 import 'react-quill/dist/quill.snow.css'
 
@@ -19,16 +20,17 @@ const formats = [
     'list', 'bullet', 'indent',
     'link', 'image'
 ];
-
+ 
 
 export default function BlogForm() {
 
     // use state to store an object, properties will default to empty strings for the given value
+    const [redirect, setRedirect] = useState(false);
     const [blogPost, setBlogPost] = useState({
         title: '',
         content: '',
         createdDate: '',
-        img: '',
+        img: "https://daily.jstor.org/wp-content/uploads/2020/06/why_you_should_learn_the_names_of_trees_1050x700.jpg",
         author: '',
         summary: ''
     })
@@ -43,29 +45,34 @@ export default function BlogForm() {
         e.preventDefault()
         try {
             
-            // const response = await createBlog(blogPost)
+            const response = await createBlog(blogPost)
 
             // if (!response.ok) {
             //     throw new Error('couldnt create blog')
             // }
             console.log(blogPost)
-          
+          if (response.ok) {
+            setRedirect(true);
+          }
 
         
-            setBlogPost({
-                title: '',
-                content: '',
-                createdDate: '',
-                img: '',
-                author: '',
-                summary: ''
-            })
+            // setBlogPost({
+            //     title: '',
+            //     content: '',
+            //     createdDate: '',
+            //     img: '',
+            //     author: '',
+            //     summary: ''
+            // })
         } catch (err) {
             console.log(err);
         }
 
     }
 
+    if (redirect){
+       return <Navigate to={'/AllBlogs'} />
+    }
     return (
         <div className="px-10 bg-neutral-50 ">
             <h1 className="text-xl pb-5" >Blog Entry Form</h1>
