@@ -29,7 +29,7 @@ export default function BlogForm() {
     const [blogPost, setBlogPost] = useState({
         title: '',
         content: '',
-        createdDate: '',
+        createdAt: '',
         img: "https://daily.jstor.org/wp-content/uploads/2020/06/why_you_should_learn_the_names_of_trees_1050x700.jpg",
         author: '',
         summary: ''
@@ -98,9 +98,9 @@ export default function BlogForm() {
 
                 <input className='mt-5px'
                     type="date"
-                    id="createdDate"
-                    name="createdDate"
-                    value={blogPost.createdDate}
+                    id="createdAt"
+                    name="createdAt"
+                    value={blogPost.createdAt}
                     onChange={handleChange} />
                 <input type="text"
                     placeholder={'Author'}

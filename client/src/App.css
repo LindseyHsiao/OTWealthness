@@ -86,6 +86,7 @@ div.post-page a{
 }
 div.post-page div.post-content p{
   line-height: 1.6rem;
+  font-family: 'Times New Roman', Times, serif
 }
 div.post-page div.post-content img{
   object-fit: cover;
@@ -94,3 +95,4 @@ div.post-page div.post-content img{
   float:left;
   margin: 20px;
 }
+
