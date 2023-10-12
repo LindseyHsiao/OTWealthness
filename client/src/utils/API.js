@@ -25,3 +25,12 @@ export const getOneBlog = (id) => {
         }
     })
 }
+
+export const getOneUser = (id) => {
+    return fetch(`/api/user/${id}`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+}
