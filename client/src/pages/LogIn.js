@@ -4,9 +4,8 @@ export default function LogIn() {
 
     // use state to store an object, properties will default to empty strings for the given value
     const [user, setUser] = useState({
-        firstName: '',
-        lastName: '',
-        email: ''
+        email: '',
+        password: ''
     })
 
     //on change 
@@ -43,24 +42,18 @@ export default function LogIn() {
                 <input 
                 onChange={handleChange} //or onChange= {ev => setUser(ev.target.value)}
                 type="text" 
-                placeholder="First Name" 
-                name="firstName" 
-                value={user.firstName} 
+                placeholder="email" 
+                name="email" 
+                value={user.email} 
                 />
                 <input 
                 onChange={handleChange} 
                 type="text" 
-                placeholder="Last Name" 
-                id="lastName" 
-                name="lastName" 
-                value={user.lastName} />
-                <input 
-                onChange={handleChange} 
-                type="text" 
-                placeholder="Email" 
-                id="email" 
-                name="email" 
-                value={user.email} />
+                placeholder="password" 
+                id="password" 
+                name="password" 
+                value={user.password} />
+                
 
 
                 <button>Submit</button>
