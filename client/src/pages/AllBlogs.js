@@ -2,7 +2,8 @@
 import { useEffect, useState } from 'react';
 import { getAllBlogs } from '../utils/API'
 import { format } from 'date-fns'
-import IntroPost from './IntroPost'
+import IntroPost from '../components/IntroPost'
+import Blogs from '../components/Blogs'
 
 export default function AllBlogs() {
 
@@ -31,9 +32,10 @@ export default function AllBlogs() {
     return (
 
         <section>
-            <h1>OT Wealthness Blog</h1>
+            <h1 className=''>OT Wealthness Blog</h1>
             {reversedData.length>0? <IntroPost post={reversedData[0]}/>:null}
-            <div>
+            {reversedData.length>0? <Blogs posts={reversedData}/>:null}
+            {/* <div>
                 {reversedData.map((item, i) => (
                     <div className="post" key={i}>
                         <div className="image">
@@ -51,7 +53,7 @@ export default function AllBlogs() {
 
 
                 ))}
-            </div>
+            </div> */}
         </section>
 
 
