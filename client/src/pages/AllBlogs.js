@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import { getAllBlogs } from '../utils/API'
 import { format } from 'date-fns'
+import IntroPost from './IntroPost'
 
 export default function AllBlogs() {
 
@@ -15,7 +16,7 @@ export default function AllBlogs() {
                 const blogData = await response.json();
 
 
-                // display the most recent 3 blog posts. 
+                // display reverse order  
                 const reversedDataSet = blogData.toReversed();
 
                 setReversedData(reversedDataSet)
@@ -31,6 +32,7 @@ export default function AllBlogs() {
 
         <section>
             <h1>OT Wealthness Blog</h1>
+            {reversedData.length>0? <IntroPost post={reversedData[0]}/>:null}
             <div>
                 {reversedData.map((item, i) => (
                     <div className="post" key={i}>
