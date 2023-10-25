@@ -32,7 +32,7 @@ export default function AllBlogs() {
     return (
 
         <section>
-            <h1 className=''>OT Wealthness Blog</h1>
+            <h1 className='blog-title'>OT Wealthness Blog</h1>
             {reversedData.length>0? <IntroPost post={reversedData[0]}/>:null}
             {reversedData.length>0? <Blogs posts={reversedData}/>:null}
             {/* <div>
