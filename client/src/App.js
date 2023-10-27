@@ -11,13 +11,18 @@ import AllBlogs from './pages/AllBlogs';
 import LogIn from './pages/LogIn';
 import Table from './pages/Table';
 import './App.css'
+import Splash from './pages/Splash';
+
 
 function App() {
+
+ 
   return (
     <BrowserRouter>
-      <Header />
+       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Splash />} />
+        <Route path="/home" element={<Home />} />
         {/* <Route path="/Contact" element={<Contact />} /> */}
         <Route path="/Services" element={<Services />} />
         <Route path="/Blog/:id" element={<Blog />} />
