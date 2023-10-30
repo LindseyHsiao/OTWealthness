@@ -21,7 +21,7 @@ function App() {
     <BrowserRouter>
        <Header />
       <Routes>
-        <Route path="/" element={<Splash />} />
+        <Route path="/" exact element={<Splash />} />
         <Route path="/home" element={<Home />} />
         {/* <Route path="/Contact" element={<Contact />} /> */}
         <Route path="/Services" element={<Services />} />
