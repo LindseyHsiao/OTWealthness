@@ -33,8 +33,8 @@ export default function AllBlogs() {
 
         <section>
             <h1 className='blog-title'>OT Wealthness Blog</h1>
-            {reversedData.length>0? <IntroPost post={reversedData[0]}/>:null}
-            {reversedData.length>0? <Blogs posts={reversedData}/>:null}
+            {reversedData.length > 0 ? <IntroPost post={reversedData[0]} /> : null}
+            {reversedData.length > 0 ? <Blogs posts={reversedData} /> : null}
             {/* <div>
                 {reversedData.map((item, i) => (
                     <div className="post" key={i}>

@@ -28,7 +28,6 @@ export default function Blog() {
         getData()
     }, [id])
 
-    // console.log(formattedDate)
 
 
 

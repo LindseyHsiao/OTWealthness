@@ -1,8 +1,13 @@
 import { useEffect, useState } from 'react';
-import odalyLogo from '../assets/images/OdalyLogo.png'
+// import odalyLogo from '../assets/images/OdalyLogo.png'
+import odalyHeadShot from '../assets/images/OdalyHeadShot.png'
 // import blogData from '../assets/misc/blog.json'
-import YoutubeEmbed from './YoutubeEmbed'
+// import YoutubeEmbed from './YoutubeEmbed'
 import { getAllBlogs } from '../utils/API'
+import { format } from 'date-fns'
+import odalyImage from '../assets/images/OdalyHeadShot.png'
+
+
 
 
 export default function Home() {
@@ -14,10 +19,14 @@ export default function Home() {
             try {
                 const response = await getAllBlogs();
                 const blogData = await response.json();
-                              
+
 
                 // display the most recent 3 blog posts. 
-                const reversedDataSet = blogData.toReversed().slice(0, 3);
+                // const reversedDataSet = blogData.toReversed().slice(0, 3);
+                const reversedDataSet = blogData.sort((a, b) => {
+                    return new Date(b.createdAt) -  new Date(a.createdAt)
+                }).slice(0, 3);
+
                 setReversedData(reversedDataSet)
             } catch (err) {
                 console.log(err)
@@ -30,7 +39,7 @@ export default function Home() {
     return (
         <>
             {/* <video src={video} autoPlay loop muted></video> */}
-            <div className="App">
+            {/* <div className="App">
 
                 <YoutubeEmbed embedId="bxfacPsXVtE" />
             </div>
@@ -38,57 +47,53 @@ export default function Home() {
             <div className='flex flex-col justify-center items-center bg-amber-700 opacity-90 p-10 h-30'>
                 <h1 className='uppercase text-4xl mb-10 text-neutral-50'>The journey to inner wealth</h1>
                 <button className='border rounded pt-2 pb-2 pr-4 pl-4 text-neutral-50 hover:text-amber-700 hover:bg-neutral-50'>Start Now</button>
+            </div> */}
+
+            <div className='flex flex-col md:flex-row-reverse p-10  m-10'>
+                <div className='flex flex-col w-full justify-center md:pr-4'>
+                    <h1 className='mb-12 text-center text-3xl font-bold'>About  OT</h1>
+                    <p className='about px-4 text-left'>Creator & founder of OT WEALTHNESS, wealth is the meaning of Odaly's name "riqueza". Odaly Tineo is a Latina yoga instructor and a self-transformational wellness mentor. She believes inner wealth is creating your own life’s path through authentic connection to, Self. A holistic and intuitive wellness coaching approach that centers around one's innermost explorations. The Inner-Wealth journey was inspired by Odaly's own path of self-discovery and spirituality. The philosophy of Yoga empowers Odaly's body acceptance and connection to her intuitive nature. She applies writing and journaling as a therapeutic mindful practice to regulate mindset and emotions. She is a spiritual light-worker of communities and feminine circles. Odaly holds a Yoga Alliance teacher certification and has been practicing yoga for over a decade. Teaching different types of yoga practices, including energy work, breath work, and meditation techniques in English, y Español. She is first-generation to earn a B.A. in Sociology and M.A.S..  Odaly is a leader of workshops and retreats, hosts supportive community groups for women and is the Co-creator of BRAVA, a community for feminine healing and connection.</p>
+                </div>
+                <div className='flex flex-col items-center md:justify-center lg:w-1/2 container w-full' >
+                    <img src={odalyHeadShot} alt="" className='rounded-t-full ' />
+                    
+                </div>
             </div>
 
-            <div className='flex p-10 bg-neutral-50 colums-2'>
-                <div className='flex flex-col w-full'>
-                    <h1 className='mb-12 text-center text-3xl font-bold'>About OT</h1>
-                    <p>Creator & founder of OT WEALTHNESS, wealth is the meaning of Odaly's name "riqueza". Odaly Tineo is a Latina yoga instructor and a self-transformational wellness mentor. She believes inner wealth is creating your own life’s path through authentic connection to, Self. A holistic and intuitive wellness coaching approach that centers around one's innermost explorations. The Inner-Wealth journey was inspired by Odaly's own path of self-discovery and spirituality. The philosophy of Yoga empowers Odaly's body acceptance and connection to her intuitive nature. She applies writing and journaling as a therapeutic mindful practice to regulate mindset and emotions. She is a spiritual light-worker of communities and feminine circles. Odaly holds a Yoga Alliance teacher certification and has been practicing yoga for over a decade. Teaching different types of yoga practices, including energy work, breath work, and meditation techniques in English, y Español. She is first-generation to earn a B.A. in Sociology and M.A.S..  Odaly is a leader of workshops and retreats, hosts supportive community groups for women and is the Co-creator of BRAVA, a community for feminine healing and connection.</p>
-                </div>
-                <div className='w-full'>
-                    <img src={odalyLogo} alt="" />
-                </div>
-            </div>
+            
+
+
 
             {/* <!-- Container for demo purpose --> */}
             <div class="container pt-10 mx-auto md:px-6 ">
                 {/* <!-- Section: Design Block --> */}
                 <section class="mb-32 text-center md:text-left ">
 
-                    <div class="container my-24 mx-auto md:px-6">
+                    <div class="container my-24 mx-auto">
 
                         <section class="mb-32 text-center">
                             <h2 class="mb-12 text-center text-3xl font-bold">Latest articles</h2>
 
-                            <div class="grid gap-6 lg:grid-cols-3 xl:gap-x-12">
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10 gap-8 ">
                                 {reversedData.map((item, i) => (
-                                    <div class="mb-6 lg:mb-0">
-                                        <div class="relative mb-6 overflow-hidden rounded-lg bg-cover bg-no-repeat shadow-lg dark:shadow-black/20  "
-                                            data-te-ripple-init data-te-ripple-color="light">
-                                            <img src={item.img} class="w-full h-44" alt="Louvre" />
-                                            <a href={`/Blog/${item._id}`}>
-                                                <div
-                                                    class="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100 bg-[hsla(0,0%,98.4%,.15)]">
-                                                </div>
-                                            </a>
+                                    <div className="m-4 cursor-pointer">
+                                        <a href={`/Blog/${item._id}`}>
+                                            <img src={item.img} className="w-full rounded-2xl object-cover h-[200px]" alt="blog" />
+                                        </a>
+                                        <h3 className="font-bold mt-3">{item.title}</h3>
+                                        <p className="line-clamp-3 text-gray-400 mt-3">{item.summary}</p>
+                                        <div className='mt-5 flex items-center'>
+                                            <img src={odalyImage} alt='Odaly' className='bg-amber-200 w-[35px] h-[35px] rounded-full' />
+                                            <div className='ml-2'>
+                                                <h3 className='font-bold text-[12px]'>{item.author}</h3>
+                                                <time className='text-gray-500 text-[10px] font-sans'>{format(new Date(item.createdAt), 'MMM d, yyy')}</time>
+                                            </div>
                                         </div>
-
-                                        <h5 class="mb-3 text-lg font-bold">{item.title}</h5>
-
-                                        <p class="mb-6 text-neutral-500 dark:text-neutral-300">
-                                            <small>Published <u>{item.createdDate}</u> by
-                                                <a href="#!">{item.author}</a></small>
-                                        </p>
-                                        <p class="text-neutral-500 dark:text-neutral-300">
-                                            Ut pretium ultricies dignissim. Sed sit amet mi eget urna
-                                            placerat vulputate. Ut vulputate est non quam dignissim
-                                            elementum. Donec a ullamcorper diam.
-                                        </p>
                                     </div>
+
                                 ))}
+
                             </div>
-
-
                         </section>
                     </div>
 

@@ -11,7 +11,7 @@ export default function Header() {
         <>
             {location.pathname === '/' ? '' : (
 
-                <header className="bg-neutral-50">
+                <header className="bg-yellow-900">
                     {/* <!-- Hero --> */}
                     <div className="max-w-6xl mx-auto px-6 py-6">
                         {/* <!-- Menu/Logo Container --> */}

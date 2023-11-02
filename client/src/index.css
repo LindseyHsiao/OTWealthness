@@ -4,12 +4,23 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Roboto";
+  src: local('Roboto'),
+    url('./assets/fonts/Roboto/Roboto-Regular.ttf');
+}
 
 body {
 
   font-family: 'Cinzel Decorative', cursive;
+  background-color: #f5efe8;
 
 }
+
+p{
+  font-family: 'Roboto';
+}
+
 
 .blogLabel {
   font-weight: 700
@@ -85,4 +96,9 @@ code {
 
 .open .hamburger-bottom {
   transform: rotate(-45deg) translateY(6px) translateX(-6px);
+}
+
+.about{
+  font-family: "Roboto";
+
 }

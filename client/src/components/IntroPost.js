@@ -5,7 +5,7 @@ import { format } from 'date-fns'
 
 
 export default function IntroPost({ post }) {
-
+console.log(post);
     return (
         <div className='grid grid-cols-1 mt-10 gap-8 md:grid-cols-2 px-10 md:px-15 lg:px-32'>
             <a href={`/Blog/${post._id}`}>

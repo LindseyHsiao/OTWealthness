@@ -2,6 +2,7 @@ import odalyImage from '../assets/images/OdalyHeadShot.png'
 import { format } from 'date-fns'
 
 export default function Blogs({ posts }) {
+    console.log(posts);
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10 gap-8 px-10 md:px-15 lg:px-32">
             {posts.map((item) => (

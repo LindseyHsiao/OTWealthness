@@ -141,5 +141,8 @@ div.post-page div.post-content img{
   font-size: 22px;
   border-radius: 10px;
 }
+.content img {
+  height: 40%;
+}
 
 
