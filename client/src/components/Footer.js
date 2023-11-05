@@ -11,7 +11,7 @@ export default function Footer() {
     return (
         <>
             {location.pathname === '/' ? '' : (
-                <footer className="bg-neutral-50">
+                <footer className="bg-neutral-50 mt-10">
                     {/* <!-- container --> */}
                     <div className="container max-w-6xl py-10 mx-auto">
                         {/* <!-- footer flex container --> */}

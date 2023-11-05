@@ -30,9 +30,6 @@ export default function Blog() {
 
 
 
-
-
-
     return (
         <>
             {!loading ? <h1>...Loading</h1> : (
@@ -49,7 +46,7 @@ export default function Blog() {
                         </p>
                         <div class="flex max-h-64 relative mb-6 overflow-hidden rounded-lg bg-cover bg-no-repeat shadow-lg dark:shadow-black/20 "
                             data-te-ripple-init data-te-ripple-color="light">
-                            <img className="object-center object-cover" src={oneBlog.img} alt="blog post" />
+                            <img className="object-center object-cover w-full" src={oneBlog.img} alt="blog post" />
                         </div>
 
 

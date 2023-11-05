@@ -50,7 +50,7 @@ export default function Home() {
             </div> */}
 
             <div className='flex flex-col lg:flex-row-reverse p-10  m-10'>
-                <div className='flex flex-col w-full justify-center md:pr-4'>
+                <div className='flex flex-col w-full justify-center md:pr-4 lg:pl-10'>
                     <h1 className='mb-12 text-center text-3xl font-bold'>About  OT</h1>
                     <p className='about px-4 text-left'>Creator & founder of OT WEALTHNESS, wealth is the meaning of Odaly's name "riqueza". Odaly Tineo is a Latina yoga instructor and a self-transformational wellness mentor. She believes inner wealth is creating your own life’s path through authentic connection to, Self. A holistic and intuitive wellness coaching approach that centers around one's innermost explorations. The Inner-Wealth journey was inspired by Odaly's own path of self-discovery and spirituality. The philosophy of Yoga empowers Odaly's body acceptance and connection to her intuitive nature. She applies writing and journaling as a therapeutic mindful practice to regulate mindset and emotions. She is a spiritual light-worker of communities and feminine circles. Odaly holds a Yoga Alliance teacher certification and has been practicing yoga for over a decade. Teaching different types of yoga practices, including energy work, breath work, and meditation techniques in English, y Español. She is first-generation to earn a B.A. in Sociology and M.A.S..  Odaly is a leader of workshops and retreats, hosts supportive community groups for women and is the Co-creator of BRAVA, a community for feminine healing and connection.</p>
                 </div>
